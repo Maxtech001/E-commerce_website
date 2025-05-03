@@ -1,5 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.learn</groupId>
   <artifactId>mycart</artifactId>
@@ -7,62 +8,59 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>mycart Maven Webapp</name>
   <url>http://maven.apache.org</url>
-    <properties>
-        <!-- Sonar properties -->
-        <sonar.projectKey>com.ecommerce:ecommerce-app</sonar.projectKey>
-        <sonar.projectName>Ecommerce App</sonar.projectName>
-        <sonar.host.url>http://3.89.114.212:9000</sonar.host.url>
-        <sonar.token>squ_5e388927d875490e07467bb3f49c4ca4eff6abf1</sonar.token>
 
-    </properties>
+  <properties>
+    <!-- Sonar properties -->
+    <sonar.projectKey>com.ecommerce:ecommerce-app</sonar.projectKey>
+    <sonar.projectName>Ecommerce App</sonar.projectName>
+    <sonar.host.url>http://3.89.114.212:9000</sonar.host.url>
+    <sonar.token>squ_5e388927d875490e07467bb3f49c4ca4eff6abf1</sonar.token>
+  </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>5.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.30</version>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <!-- SonarQube Scanner Plugin -->
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.1.2184</version>
-            </plugin>
-
-            <!-- Maven Deploy Plugin for Nexus -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.0.0-M1</version>
-            </plugin>
-        </plugins>
-    </build>
-
-    <!-- Nexus Repository Configuration -->
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://54.92.219.240:8081/max/repository/product-app-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://54.92.219.240:8081/max/repository/product-app-Snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+  <dependencies>
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>5.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.30</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <finalName>mycart</finalName>
+    <plugins>
+      <!-- SonarQube Scanner Plugin -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.9.1.2184</version>
+      </plugin>
+
+      <!-- Maven Deploy Plugin for Nexus -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.0.0-M1</version>
+      </plugin>
+    </plugins>
   </build>
+
+  <!-- Nexus Repository Configuration -->
+  <distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <name>Nexus Release Repository</name>
+      <url>http://54.92.219.240:8081/max/repository/product-app-releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <name>Nexus Snapshot Repository</name>
+      <url>http://54.92.219.240:8081/max/repository/product-app-Snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
